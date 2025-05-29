@@ -33,11 +33,9 @@ namespace Prefabs.DistanceGrab
         {
             if (grabbed)
             {
-                // Calculer vélocité selon déplacement physique réel
                 Vector3 newPosition = rb.position;
                 currentVelocity = (newPosition - lastPosition) / Time.fixedDeltaTime;
                 lastPosition = newPosition;
-                // Pas d'assignation de velocity ici, MovePosition gère le déplacement
             }
         }
 
@@ -67,7 +65,6 @@ namespace Prefabs.DistanceGrab
                 objectRenderer.materials = newMats;
             }
         }
-
         public void Release()
         {
             grabbed = false;

@@ -19,7 +19,7 @@ namespace Prefabs.GravityEnabler
         private void Start()
         {
             lineRenderer = GetComponent<LineRenderer>();
-            ShowPointer();
+            //ShowPointer();
         }
 
         private void ShowPointer()
@@ -74,7 +74,8 @@ namespace Prefabs.GravityEnabler
                 lineRenderer.SetPosition(0, transform.position);
 
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+                int layerMask = ~LayerMask.GetMask("Wall");
+                if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
                 {
                     lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);
 

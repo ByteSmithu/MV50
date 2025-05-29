@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7400576782969742482}
   - component: {fileID: 7020120907260907355}
   - component: {fileID: 6055687458679058022}
-  - component: {fileID: 3031205116810561535}
   m_Layer: 0
   m_Name: DistanceGrab
   m_TagString: Untagged
@@ -153,18 +152,5 @@ MonoBehaviour:
   maxDistance: 10
   cannotMaterial: {fileID: 2100000, guid: ce4d04bf9a64f1b4e92c2ff0d20f5779, type: 2}
   canMaterial: {fileID: 2100000, guid: c918981d12a48ae4f9823752982a898c, type: 2}
---- !u!114 &3031205116810561535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3595171940272154550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40148490d98bb043b3939f52eedb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabBehavior: {fileID: 0}
-  ghostPoints: []
-  snapDistanceThreshold: 0.5
+  rotationSensitivity: 1
+  controllerTransform: {fileID: 0}

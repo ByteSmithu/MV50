@@ -7,6 +7,8 @@ namespace Prefabs.DistanceGrab
     {
         private LineRenderer lineRenderer;
         private bool grabbing = false;
+        private bool isBox = false;
+        private bool isRotating = false;
         private GameObject grabbedGameObject;
         private GameObject tempGrabbedGameObject;
         private float hitDistance;
@@ -16,10 +18,14 @@ namespace Prefabs.DistanceGrab
         public Material cannotMaterial;
         public Material canMaterial;
 
+        private float initialControllerX;
+        public float rotationSensitivity; 
+        public Transform controllerTransform;
+
         private void Start()
         {
             lineRenderer = GetComponent<LineRenderer>();
-            ShowPointer();
+            //ShowPointer();
         }
 
         private void ShowPointer()
@@ -61,19 +67,33 @@ namespace Prefabs.DistanceGrab
 
         private void GrabOject()
         {
+            
+
             if (tempGrabbedGameObject != null)
             {
-                DistanceGrabbedBehavior dgb = tempGrabbedGameObject.GetComponent<DistanceGrabbedBehavior>();
-                if (!dgb.isGrabbed())
+                if (isBox)
                 {
+                    isRotating = true;
+                    DistanceRotatedBehavior drb = tempGrabbedGameObject.GetComponent<DistanceRotatedBehavior>();
                     grabbedGameObject = tempGrabbedGameObject;
-                    grabbing = true;
                     tempGrabbedGameObject = null;
-                    dgb.Grab();
+                    drb.Rotation();
+                    initialControllerX = controllerTransform.position.x;
                 }
+                else
+                {
+                    DistanceGrabbedBehavior dgb = tempGrabbedGameObject.GetComponent<DistanceGrabbedBehavior>();
+                    if (!dgb.isGrabbed())
+                    {
+                        grabbedGameObject = tempGrabbedGameObject;
+                        grabbing = true;
+                        tempGrabbedGameObject = null;
+                        dgb.Grab();
+                    }   
+                }
+
             }
         }
-
         private void releaseObject()
         {
             if (grabbing)
@@ -82,21 +102,12 @@ namespace Prefabs.DistanceGrab
                 grabbedGameObject = null;
                 grabbing = false;
             }
-        }
-
-        public bool IsGrabbing()
-        {
-            return grabbing;
-        }
-
-        public GameObject GetGrabbedObject()
-        {
-            return grabbedGameObject;
-        }
-
-        public float GetTransformDistance()
-        {
-            return transformDistance;
+            if (isRotating)
+            {
+                grabbedGameObject.GetComponent<DistanceRotatedBehavior>().Release();
+                grabbedGameObject = null;
+                isRotating = false;
+            }
         }
 
 
@@ -105,13 +116,14 @@ namespace Prefabs.DistanceGrab
             if (lineRenderer)
             {
                 lineRenderer.SetPosition(0, transform.position);
-                if (!grabbing)
+                if (!grabbing && !isRotating)
                 {
                     RaycastHit hit;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,
                             maxDistance))
                     {
                         lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);
+
                         DistanceGrabbedBehavior dgb = hit.collider.gameObject.GetComponentInParent<DistanceGrabbedBehavior>();
 
                         if (dgb)
@@ -129,6 +141,22 @@ namespace Prefabs.DistanceGrab
                             tempGrabbedGameObject = null;
                             lineRenderer.material = cannotMaterial;
                         }
+
+                        if (hit.collider.gameObject.CompareTag("Box"))
+                        {
+                            isBox = true;
+                            tempGrabbedGameObject = hit.collider.gameObject.transform.parent.gameObject;
+                            lineRenderer.material = canMaterial;
+                            hitDistance = hit.distance;
+                            transformDistance = ((hit.point - transform.position) +
+                                                 (hit.collider.gameObject.transform.position - hit.point))
+                                .magnitude;
+                        }
+                        else
+                        {
+                            isBox = false;
+                        }
+                        
                     }
                     else
                     {
@@ -140,34 +168,47 @@ namespace Prefabs.DistanceGrab
 
                 else
                 {
-                    //retravailler
-                    DistanceGrabbedBehavior dgb = grabbedGameObject.GetComponent<DistanceGrabbedBehavior>();
-
-                    Vector3 currentPos = dgb.transform.position;
-                    Vector3 targetPos = transform.position + transform.forward * transformDistance;
-                    float threshold = 0.01f;
-
-                    Vector3 direction = (targetPos - currentPos).normalized;
-                    float distance = Vector3.Distance(currentPos, targetPos);
-
-                    // Raycast pour voir s'il y a un mur entre la position actuelle et la cible
-                    if (Physics.Raycast(currentPos, direction, out RaycastHit hit, distance))
+                    lineRenderer.SetPosition(1, transform.position + transform.forward * transformDistance);
+                
+                    if (isRotating && grabbedGameObject != null)
                     {
-                        if (hit.collider.CompareTag("Wall"))
+                        float deltaX = controllerTransform.position.x - initialControllerX;
+                        grabbedGameObject.GetComponent<DistanceRotatedBehavior>().ApplyRotation(deltaX, rotationSensitivity);
+                    }
+                    else
+                    {
+                        //retravailler
+                        DistanceGrabbedBehavior dgb = grabbedGameObject.GetComponent<DistanceGrabbedBehavior>();
+                        if (dgb)
                         {
-                            // Mur détecté : on bloque le mouvement (ne bouge pas)
-                            lineRenderer.SetPosition(1, hit.point);
-                            Debug.Log("Mur détecté : mouvement bloqué");
-                            return;
+                            Vector3 currentPos = dgb.transform.position;
+                            Vector3 targetPos = transform.position + transform.forward * transformDistance;
+                            float threshold = 0.01f;
+
+                            Vector3 direction = (targetPos - currentPos).normalized;
+                            float distance = Vector3.Distance(currentPos, targetPos);
+
+                            // Raycast pour voir s'il y a un mur entre la position actuelle et la cible
+                            if (Physics.Raycast(currentPos, direction, out RaycastHit hit, distance))
+                            {
+                                if (hit.collider.CompareTag("Wall"))
+                                {
+                                    // Mur détecté : on bloque le mouvement (ne bouge pas)
+                                    lineRenderer.SetPosition(1, hit.point);
+                                    Debug.Log("Mur détecté : mouvement bloqué");
+                                    return;
+                                }
+                            }
+
+
+                            if (distance > threshold)
+                            {
+                                dgb.SetPosition(targetPos);
+                                lineRenderer.SetPosition(1, targetPos);
+                            }
                         }
                     }
 
-
-                    if (distance > threshold)
-                    {
-                        dgb.SetPosition(targetPos);
-                        lineRenderer.SetPosition(1, targetPos);
-                    }
 
                 }
 
