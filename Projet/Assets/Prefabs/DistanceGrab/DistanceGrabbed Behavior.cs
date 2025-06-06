@@ -44,6 +44,18 @@ namespace Prefabs.DistanceGrab
             rb.MovePosition(newPos);
         }
 
+        public void MoveToPosition(Vector3 newPos)
+        {
+            Vector3 forceVector = (newPos - gameObject.transform.position);
+            if (forceVector.magnitude == 0)
+            {
+                SetPosition(newPos);
+            }
+            else
+            {
+                rb.AddForce(forceVector.normalized*20, ForceMode.Force);
+            }
+        }
         public bool isGrabbed()
         {
             return grabbed;
@@ -78,5 +90,6 @@ namespace Prefabs.DistanceGrab
                 objectRenderer.materials = new Material[] { originalMaterial };
             }
         }
+
     }
 }

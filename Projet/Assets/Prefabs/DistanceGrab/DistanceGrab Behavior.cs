@@ -125,7 +125,6 @@ namespace Prefabs.DistanceGrab
                         lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);
 
                         DistanceGrabbedBehavior dgb = hit.collider.gameObject.GetComponentInParent<DistanceGrabbedBehavior>();
-
                         if (dgb)
                         {
 
@@ -142,10 +141,13 @@ namespace Prefabs.DistanceGrab
                             lineRenderer.material = cannotMaterial;
                         }
 
-                        if (hit.collider.gameObject.CompareTag("Box"))
+                        // detection d'un objet
+                        DistanceRotatedBehavior drb =
+                            hit.collider.gameObject.GetComponentInParent<DistanceRotatedBehavior>();
+                        if (drb)
                         {
                             isBox = true;
-                            tempGrabbedGameObject = hit.collider.gameObject.transform.parent.gameObject;
+                            tempGrabbedGameObject = drb.gameObject;
                             lineRenderer.material = canMaterial;
                             hitDistance = hit.distance;
                             transformDistance = ((hit.point - transform.position) +
@@ -196,11 +198,11 @@ namespace Prefabs.DistanceGrab
                                     // Mur détecté : on bloque le mouvement (ne bouge pas)
                                     lineRenderer.SetPosition(1, hit.point);
                                     Debug.Log("Mur détecté : mouvement bloqué");
+                                    dgb.MoveToPosition(targetPos);
                                     return;
                                 }
                             }
-
-
+                            
                             if (distance > threshold)
                             {
                                 dgb.SetPosition(targetPos);
