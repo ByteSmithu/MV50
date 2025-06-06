@@ -4,52 +4,39 @@ using UnityEngine;
 
 public class endLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
 
+    //On créer un entier pour conter le nombre de cube qui sont dans la bonne zone 
     private int checkEnd;
-    private int nbrObjet;
+
+    //On instancie AudioSource pour pouvoir jouer un son à la réussite de l'énigme
     private AudioSource audioSource;
-    // private bool endable;
-    // private GameObject temp;
 
 
     void Start()
     {
+        //On donne comme valeur à checkEnd le nombre de cube dans l'énigme
         checkEnd = 4;
-        // endable = false;
+        
         audioSource = gameObject.GetComponent<AudioSource>();
-
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-     
-        
-
-    }
-
-    // public void setNeeded()
-    // {
-    //     checkEnd = checkEnd + 1; 
-    //     print(checkEnd);
-    // }
-
+    //La fonction Increase augment de 1 la valeur de checkEnd si un cube sort de sa zone dédier 
     public void Increase()
     {
         checkEnd = checkEnd + 1;
         print(checkEnd);
-        // print(endable);
     } 
 
-        public void Decrease()
+    //La fonction Decrease diminue de 1 la valeur de checkEnd si un cube entre dans sa zone dédier 
+    public void Decrease()
     {
         checkEnd = checkEnd - 1;
         print(checkEnd);
     }
 
+    //A chaque fois qu'un cube entre dans la bonne zonne, on vérifie la valeur de checkEnd, si il est nul cela veut dire que l'énigme est réussie 
     public void ifWin()
     {
         if (checkEnd == 0)
