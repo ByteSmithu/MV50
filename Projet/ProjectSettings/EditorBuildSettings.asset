@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tuto.unity
+    guid: 72c72d9c03e8b0a439060e64629afbac
+  - enabled: 1
+    path: Assets/Scenes/Labyrinthe.unity
+    guid: a663902eda8e72b4c9a438992378a2c9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8dc64d8951c4253449b8758eab7d0aef, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 90c49caebd026774eac6472178892f24, type: 2}

@@ -61,11 +61,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\HandBehavior.cs" />
     <Compile Include="Assets\Prefabs\DistanceGrab\DistanceGrabbed Behavior.cs" />
-    <Compile Include="Assets\Scripts\endLevel.cs" />
     <Compile Include="Assets\Prefabs\DistanceGrab\DistanceGrab Behavior.cs" />
     <Compile Include="Assets\Prefabs\Panel\TimePanelDisplay.cs" />
     <Compile Include="Assets\Scripts\ChangeGameObjectMaterialBehavior.cs" />
     <Compile Include="Assets\Prefabs\GravityEnabler\GravityEnabler Behavior.cs" />
+    <Compile Include="Assets\Scripts\Script Tuto\Phase1ToPhase2.cs" />
+    <Compile Include="Assets\Scripts\Script Tuto\endLevel.cs" />
     <Compile Include="Assets\Scripts\Tool Behavior.cs" />
     <Compile Include="Assets\Prefabs\DistanceGrab\DistanceRotateBehavior.cs" />
     <Compile Include="Assets\Scripts\InputsBehavior.cs" />

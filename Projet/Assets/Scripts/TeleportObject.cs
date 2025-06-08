@@ -20,7 +20,6 @@ public class TeleportObject : MonoBehaviour
     {
         tran = objetTeleporte.GetComponent<Transform> ();        
 
-        tran.position = destination;
 
     }
 
