@@ -12,12 +12,14 @@ public class CollisionGameLogic : GameLogic
     {
         if (other.gameObject == gameObjectToCollideWith)
             conditionDone = true;
+        SideEffect();
     }
 
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject == gameObjectToCollideWith)
             conditionDone = false;
+        ReverseSideEffect();
     }
 
 
@@ -25,4 +27,7 @@ public class CollisionGameLogic : GameLogic
     {
         return conditionDone;
     }
+    
+    public override void SideEffect(){}
+    public override void ReverseSideEffect(){}
 }

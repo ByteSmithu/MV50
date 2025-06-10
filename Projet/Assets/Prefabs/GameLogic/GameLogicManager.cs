@@ -6,25 +6,14 @@ using UnityEngine;
 
 public class GameLogicManager : MonoBehaviour
 {
-    public List<GameObject> gameLogicsHost = new List<GameObject>();
-    public List<GameObject> endGameLogicsHost = new List<GameObject>();
     private List<GameLogic> gameLogics = new List<GameLogic>();
     private List<GameLogicEnd> endGameLogics = new List<GameLogicEnd>();
 
     public void Start()
     {
-        foreach (GameObject go in gameLogicsHost)
-        {
-            gameLogics.Add(go.GetComponent<GameLogic>());
-        }
-
-        foreach (GameObject go in endGameLogicsHost)
-        {
-            endGameLogics.Add(go.GetComponent<GameLogicEnd>());
-        }
     }
 
-    private void Update()
+    public void Actualize()
     {
         foreach (GameLogic gl in gameLogics)
         {
@@ -38,27 +27,14 @@ public class GameLogicManager : MonoBehaviour
         }
     }
 
-    public void addGameLogic(GameObject go)
+    public void SubscribeItself(GameLogic gl)
     {
-        gameLogicsHost.Add(go);
-        gameLogics.Add(go.GetComponent<GameLogic>());
+        gameLogics.Add(gl);
     }
 
-    public void removeGameLogic(GameObject go)
+    public void SubscribeItself(GameLogicEnd gle)
     {
-        gameLogicsHost.Remove(go);
-        gameLogics.Remove(go.GetComponent<GameLogic>());
-    }
-    
-    public void addEndGameLogic(GameObject go)
-    {
-        endGameLogicsHost.Add(go);
-        endGameLogics.Add(go.GetComponent<GameLogicEnd>());
+        endGameLogics.Add(gle);
     }
 
-    public void removeEndGameLogic(GameObject go)
-    {
-        endGameLogicsHost.Remove(go);
-        endGameLogics.Remove(go.GetComponent<GameLogicEnd>());
-    }
 }
