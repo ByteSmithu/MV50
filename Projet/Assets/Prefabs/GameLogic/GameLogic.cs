@@ -15,4 +15,9 @@ public abstract class GameLogic : MonoBehaviour
     {
         gameLogicManager.SubscribeItself(this);
     }
+
+    public void NotifyManager()
+    {
+        gameLogicManager.Actualize();
+    }
 }
