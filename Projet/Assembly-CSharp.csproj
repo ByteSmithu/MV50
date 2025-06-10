@@ -55,15 +55,15 @@
     <Compile Include="Assets\Scripts\Script Tuto\Phase1ToPhase2.cs" />
     <Compile Include="Assets\Scripts\Script Tuto\endLevel.cs" />
     <Compile Include="Assets\Scripts\Tool Behavior.cs" />
-    <Compile Include="Assets\Scripts\GameLogic\GameLogicScene 3\CollisionGameLogic.cs" />
     <Compile Include="Assets\Prefabs\DistanceGrab\DistanceRotateBehavior.cs" />
     <Compile Include="Assets\Scripts\InputsBehavior.cs" />
     <Compile Include="Assets\Scripts\GameLogic\GameLogicEnd.cs" />
     <Compile Include="Assets\Scripts\GameLogic\GameLogic.cs" />
     <Compile Include="Assets\Scripts\MultiToolBehavior.cs" />
-    <Compile Include="Assets\Scripts\GameLogic\GameLogicScene 3\ShowWinMessage.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\ActivateGameObjectOnWin.cs" />
     <Compile Include="Assets\Prefabs\Panel\WinZoneShowPanel.cs" />
     <Compile Include="Assets\Prefabs\Gravity\GravityBehavior.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\CollisionGameLogic.cs" />
     <Compile Include="Assets\Scripts\TeleportObject.cs" />
     <Compile Include="Assets\Scripts\changeMaterial.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -3446,14 +3446,13 @@ GameObject:
   - component: {fileID: 1315987938}
   - component: {fileID: 1315987941}
   - component: {fileID: 1315987940}
-  - component: {fileID: 1315987939}
   m_Layer: 0
   m_Name: WinMsg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1315987938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3473,19 +3472,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.667, y: 1.519}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1315987939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315987937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45862836b67546244a1eab7687b48eca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameLogicManager: {fileID: 1787175879}
 --- !u!114 &1315987940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5026,6 +5012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787175878}
   - component: {fileID: 1787175879}
+  - component: {fileID: 1787175880}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -5063,6 +5050,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bbf20f479162047947bea2d12f0fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1787175880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787175877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45862836b67546244a1eab7687b48eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameLogicManager: {fileID: 1787175879}
+  toActivate: {fileID: 1315987937}
 --- !u!1 &1835062886
 GameObject:
   m_ObjectHideFlags: 0
