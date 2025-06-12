@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class MultiToolBehavior : ToolBehavior
 {
     public int currentToolId = 0;
@@ -14,9 +15,26 @@ public class MultiToolBehavior : ToolBehavior
     private ToolBehavior activeTool;
     private bool isFree = true;
 
+    private Outline outline;
+    public List<Color> colors = new List<Color>
+    {
+        Color.green,
+        Color.red,
+        Color.blue
+    };
+
     private void Start()
     {
         ActivateTool();
+        outline = GetComponentInParent<Outline>();
+        if (outline == null)
+        {
+            Debug.LogWarning("Aucun composant Outline trouvé sur le parent !");
+        }
+        else
+        {
+            outline.OutlineColor = colors[currentToolId];
+        }
     }
 
     private void ActivateTool()
@@ -69,6 +87,7 @@ public class MultiToolBehavior : ToolBehavior
             LineRenderer lr_current = tools[currentToolId].GetComponent<LineRenderer>();
             lr_current.enabled = false;
             currentToolId = (currentToolId + 1) % tools.Count;
+            outline.OutlineColor = colors[currentToolId];
             if (currentToolId != 0)
             {
                 LineRenderer lr_next = tools[currentToolId].GetComponent<LineRenderer>();
