@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
@@ -10,6 +11,7 @@ public class MultiToolBehavior : ToolBehavior
 {
     public int currentToolId = 0;
     public GameObject display;
+    public Image iconImage;
 
     public List<GameObject> tools;
     private ToolBehavior activeTool;
@@ -22,6 +24,8 @@ public class MultiToolBehavior : ToolBehavior
         Color.red,
         Color.blue
     };
+
+    public List<Sprite> toolIcons;
 
     private void Start()
     {
@@ -45,7 +49,7 @@ public class MultiToolBehavior : ToolBehavior
             {
                 activeTool = tools[i].GetComponent<ToolBehavior>();
                 activeTool.activate();
-                display.GetComponent<TextMeshPro>().text = tools[i].name;
+                //display.GetComponent<TextMeshPro>().text = tools[i].name;
             }
             else
             {
@@ -88,6 +92,7 @@ public class MultiToolBehavior : ToolBehavior
             lr_current.enabled = false;
             currentToolId = (currentToolId + 1) % tools.Count;
             outline.OutlineColor = colors[currentToolId];
+            iconImage.sprite = toolIcons[currentToolId];
             if (currentToolId != 0)
             {
                 LineRenderer lr_next = tools[currentToolId].GetComponent<LineRenderer>();
