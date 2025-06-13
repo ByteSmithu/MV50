@@ -10,13 +10,12 @@ using UnityEngine.InputSystem;
 public class MultiToolBehavior : ToolBehavior
 {
     public int currentToolId = 0;
-    public GameObject display;
     public Image iconImage;
 
     public List<GameObject> tools;
     private ToolBehavior activeTool;
     private bool isFree = true;
-
+    public GameObject controller;
     private Outline outline;
     public List<Color> colors = new List<Color>
     {
@@ -30,7 +29,7 @@ public class MultiToolBehavior : ToolBehavior
     private void Start()
     {
         ActivateTool();
-        outline = GetComponentInParent<Outline>();
+        outline = controller.GetComponent<Outline>();
         if (outline == null)
         {
             Debug.LogWarning("Aucun composant Outline trouvé sur le parent !");
@@ -38,6 +37,7 @@ public class MultiToolBehavior : ToolBehavior
         else
         {
             outline.OutlineColor = colors[currentToolId];
+            iconImage.sprite = toolIcons[currentToolId];
         }
     }
 
