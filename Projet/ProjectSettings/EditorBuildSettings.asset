@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Labyrinthe.unity
     guid: a663902eda8e72b4c9a438992378a2c9
+  - enabled: 1
+    path: Assets/Scenes/Niveau grab.unity
+    guid: a40134fce178d8442bcb2038e5b3625f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8dc64d8951c4253449b8758eab7d0aef, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 90c49caebd026774eac6472178892f24, type: 2}
