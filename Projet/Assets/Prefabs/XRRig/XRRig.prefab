@@ -985,6 +985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftControllerAim
       objectReference: {fileID: 0}
+    - target: {fileID: 8867473571435117399, guid: a8ba09246822a9344a356d2d17df310d, type: 3}
+      propertyPath: gravityHaptics
+      value: 
+      objectReference: {fileID: 4529856052715125067}
     m_RemovedComponents:
     - {fileID: 6053027790412557793, guid: a8ba09246822a9344a356d2d17df310d, type: 3}
     m_RemovedGameObjects: []
@@ -1166,6 +1170,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 2506204017263859472}
+    - target: {fileID: 4205926362197927646, guid: f4b330d74463f77439cecf8aaed006ee, type: 3}
+      propertyPath: gravityHaptics
+      value: 
+      objectReference: {fileID: 4529856052715125067}
     - target: {fileID: 6955853911879376583, guid: f4b330d74463f77439cecf8aaed006ee, type: 3}
       propertyPath: m_Name
       value: RightControllerAim

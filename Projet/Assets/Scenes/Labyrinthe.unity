@@ -122,33 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &70260672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6335795285930366698, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-  m_PrefabInstance: {fileID: 1527057468}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &70260676
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70260672}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -629719859055844128, guid: 71b44972090985d4bbd859086bfbaec7, type: 3}
 --- !u!1 &375101858
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +240,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375101858}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &375101864
 Transform:
   m_ObjectHideFlags: 0
@@ -278,7 +251,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.24807692, y: -0.365, z: -0.40076926}
-  m_LocalScale: {x: 0.07692307, y: 0.07692307, z: 0.07692307}
+  m_LocalScale: {x: 0.0912, y: 0.0912, z: 0.0912}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2079796700}
@@ -845,26 +818,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2250390930508417972, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      propertyPath: m_Size.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250390930508417972, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      propertyPath: m_Size.y
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250390930508417972, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      propertyPath: m_Size.z
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250390930508417972, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250390930508417972, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      propertyPath: m_Center.y
-      value: 9.64
-      objectReference: {fileID: 0}
     - target: {fileID: 5911187160659183407, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
       propertyPath: m_Name
       value: Room
@@ -912,10 +865,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6335795285930366698, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 70260676}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf1f482448a37140a9270924d81a731, type: 3}
 --- !u!1 &1624983140
 GameObject:
@@ -1442,6 +1392,10 @@ PrefabInstance:
       propertyPath: gameLogicManager
       value: 
       objectReference: {fileID: 605263903}
+    - target: {fileID: 4485853464647026430, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba16eeebc36006449a2b00760deecc25, type: 2}
     - target: {fileID: 8447595238374767078, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
