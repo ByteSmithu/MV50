@@ -16,8 +16,13 @@ namespace Prefabs.GravityEnabler
 
         private Dictionary<Renderer, Material> modifiedObjects = new();
 
+        public AudioSource sound;
+
         private void Start()
         {
+            sound = gameObject.GetComponent<AudioSource>();
+
+
             lineRenderer = GetComponent<LineRenderer>();
             //ShowPointer();
         }
@@ -40,7 +45,7 @@ namespace Prefabs.GravityEnabler
                 if (rend && rb)
                 {
                     rb.useGravity = !rb.useGravity;
-
+                    sound.Play(0);
                     if (!rb.useGravity)
                     {
                         if (!modifiedObjects.ContainsKey(rend))

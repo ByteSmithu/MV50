@@ -14,8 +14,13 @@ namespace Prefabs.Gravity
 
         public GravityHaptics gravityHaptics;
         private bool pointerVisible;
+
+        public AudioSource sound;
+
         private void Start()
         {
+            sound = gameObject.GetComponent<AudioSource>();
+
             lineRenderer = GetComponent<LineRenderer>();
             HidePointer();
         }
@@ -54,6 +59,8 @@ namespace Prefabs.Gravity
                 {
                     HidePointer();
                     ChangeGravity();
+                    sound.Play(0);
+
                 }
             }
         }

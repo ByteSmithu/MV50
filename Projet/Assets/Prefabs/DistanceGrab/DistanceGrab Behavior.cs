@@ -22,8 +22,14 @@ namespace Prefabs.DistanceGrab
         public float rotationSensitivity; 
         public Transform controllerTransform;
 
+        public AudioSource sound;
+
+
         private void Start()
         {
+            sound = gameObject.GetComponent<AudioSource>();
+
+
             lineRenderer = GetComponent<LineRenderer>();
             //ShowPointer();
         }
@@ -43,6 +49,8 @@ namespace Prefabs.DistanceGrab
                 if (context.started)
                 {
                     GrabOject();
+                    sound.Play(0);
+
                 }
 
                 if (context.canceled)
