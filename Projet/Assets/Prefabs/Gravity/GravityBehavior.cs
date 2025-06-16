@@ -12,7 +12,7 @@ namespace Prefabs.Gravity
         public float stengthMultiplier = 4f; // multiplicateur de la force de gravité indispensable pour avoir une gravité raisonnable sans des traits de 10 mètres
         public float rate = 0.2f; // vitesse à laquelle la force s'accroit
 
-        
+        public GravityHaptics gravityHaptics;
         private bool pointerVisible;
         private void Start()
         {
@@ -99,7 +99,8 @@ namespace Prefabs.Gravity
             Vector3 vect = end - start;
             if (reverse) vect *= -1;
             Physics.gravity = vect*stengthMultiplier;
-
+            // Envoie des pulsions dans les manettes
+            gravityHaptics.TriggerDirectionalHaptics();
         }
     }
 }

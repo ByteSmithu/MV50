@@ -72,6 +72,8 @@
     <Compile Include="Assets\Scripts\ChangeGameObjectMaterialBehavior.cs" />
     <Compile Include="Assets\Prefabs\GravityEnabler\GravityEnabler Behavior.cs" />
     <Compile Include="Assets\Scripts\GameLogic\GameLogicManager.cs" />
+    <Compile Include="Assets\Scripts\GravityHaptics.cs" />
+    <Compile Include="Assets\Prefabs\XRRig\GravityPointer.cs" />
     <Compile Include="Assets\Scripts\Script Tuto\Phase1ToPhase2.cs" />
     <Compile Include="Assets\Scripts\Script Tuto\endLevel.cs" />
     <Compile Include="Assets\Scripts\Tool Behavior.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\Scripts\GameLogic\GameLogicEnd.cs" />
     <Compile Include="Assets\Scripts\GameLogic\GameLogic.cs" />
     <Compile Include="Assets\Scripts\MultiToolBehavior.cs" />
+    <Compile Include="Assets\Prefabs\XRRig\GravityCompass.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ActivateGameObjectOnWin.cs" />
     <Compile Include="Assets\Prefabs\Panel\WinZoneShowPanel.cs" />
     <Compile Include="Assets\Prefabs\Gravity\GravityBehavior.cs" />
@@ -969,6 +972,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1059,6 +1066,10 @@
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">

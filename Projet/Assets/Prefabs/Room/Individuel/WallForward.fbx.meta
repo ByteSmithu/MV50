@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 24ef44a39b9f32545b5729abc0f27f43
+guid: 2261e05ce5dec2147844b36174b7ac94
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: background
+    second: {fileID: 2100000, guid: a607abbd8be08a8469e4d100d937e701, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue lights
+    second: {fileID: 2100000, guid: 937111950b9846f48b84500d5b4c1f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: ae573fc974602d14a909d70bf04d1a43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: a607abbd8be08a8469e4d100d937e701, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pink lights
+    second: {fileID: 2100000, guid: ffe6dcf2b4c75e945ad1c956dc3172ad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
