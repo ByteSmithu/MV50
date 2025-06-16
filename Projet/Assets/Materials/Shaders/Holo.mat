@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GradientMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 455a7b960aad45540b7fe81c4c0c9ed2, type: 3}
+  m_Name: Holo
+  m_Shader: {fileID: -6465566751694194690, guid: 8b134a5ecc6a5ad42b3157a56c1f8ab9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -17,15 +17,20 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 2849a988080b6664eb95eba3b7280a27, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -43,22 +48,26 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _Cull: 2
     - _DstBlend: 10
-    - _FresnelPower: 0.7
-    - _GravityPower: 1
+    - _Frequency: 0.01
+    - _Offset: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rotation: 0
     - _SrcBlend: 5
     - _Surface: 1
+    - _Thickness: 0
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
+    - _fresnelpower: 0.35
     m_Colors:
-    - _FresnelColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1.0548829, g: 42.215298, b: 44.727047, a: 1}
+    - _tiling: {r: 0, g: 28.85, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4656876118127551689
+--- !u!114 &5841463505532222634
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
