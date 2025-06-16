@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8202112934379898552, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882880032367531987, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
       propertyPath: m_text
       value: "Tu as gagn\xE9 !"
@@ -831,35 +835,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8202112934379898552, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4433520634145451163}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
 --- !u!4 &6836327598238778846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5927855170354493354, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
   m_PrefabInstance: {fileID: 908736894815826548}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9029639350569153740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8202112934379898552, guid: e624fbcabf6c37245b2ed670ff27cf70, type: 3}
-  m_PrefabInstance: {fileID: 908736894815826548}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4433520634145451163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9029639350569153740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45862836b67546244a1eab7687b48eca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameLogicManager: {fileID: 0}
-  toActivate: {fileID: 0}
 --- !u!1001 &1072687435190247835
 PrefabInstance:
   m_ObjectHideFlags: 0

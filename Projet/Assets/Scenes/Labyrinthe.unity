@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameLogicManager: {fileID: 605263903}
-  toActivate: {fileID: 1380680396}
+  toActivate: {fileID: 4478828090349970482}
 --- !u!114 &605263903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,11 +732,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2632498924539622675, guid: 1a1ab33ffd3bc164fb72fddfbd20f638, type: 3}
---- !u!1 &1380680396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2839586688999126644, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
-  m_PrefabInstance: {fileID: 4478828090349970481}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403397861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XRRig
       objectReference: {fileID: 0}
+    - target: {fileID: 3013238958873048307, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4433520634145451163, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
       propertyPath: gameLogicManager
       value: 
@@ -1483,11 +1482,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9029639350569153740, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165161452490975011, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+--- !u!1 &4478828090349970482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9029639350569153740, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+  m_PrefabInstance: {fileID: 4478828090349970481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
