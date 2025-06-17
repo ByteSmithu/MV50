@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 63231486}
   m_Layer: 0
   m_Name: Low Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63231484}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
 --- !u!1 &75791222
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +669,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1811188047831535452, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 823446384}
   m_SourcePrefab: {fileID: 100100000, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
 --- !u!1 &122054264 stripped
 GameObject:
@@ -1257,7 +1260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -1429,7 +1432,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1504,7 +1507,33 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713439310}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
+--- !u!1 &823446377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1811188047831535452, guid: 950447f87548bc8418edd23bb8b71cf3, type: 3}
+  m_PrefabInstance: {fileID: 122054263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &823446384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823446377}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.8809264, z: 1}
+  m_Center: {x: 0, y: 0.9404632, z: 0}
 --- !u!1 &885447407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1745,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1791,7 +1820,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989491299}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
 --- !u!1 &1096886046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,7 +2745,7 @@ GameObject:
   - component: {fileID: 1658280514}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2833,7 +2862,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658280512}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
 --- !u!1 &1710231656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,7 +3269,7 @@ GameObject:
   - component: {fileID: 1926980102}
   m_Layer: 0
   m_Name: High Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3357,7 +3386,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926980100}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
 --- !u!1 &2053688257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,7 +3601,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -3647,7 +3676,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119301108}
-  m_Mesh: {fileID: -5495902117074765545, guid: 693e74d66b7cc3846816d355930a8228, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e9c53e6bda498024db2cf4c5a134ae35, type: 3}
 --- !u!1 &2136262004
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,7 +55,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ce4d04bf9a64f1b4e92c2ff0d20f5779, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   maxDistance: 5
   cannotMaterial: {fileID: 2100000, guid: ce4d04bf9a64f1b4e92c2ff0d20f5779, type: 2}
   canMaterial: {fileID: 2100000, guid: c918981d12a48ae4f9823752982a898c, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 087fdf415ce36c34ab4b758e1713fae0, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: ae573fc974602d14a909d70bf04d1a43, type: 2}
   sound: {fileID: 8550536517226191643}
 --- !u!82 &8550536517226191643
 AudioSource:

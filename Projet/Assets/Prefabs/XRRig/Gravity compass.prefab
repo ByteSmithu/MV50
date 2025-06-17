@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 1349951402696058741}
   - component: {fileID: 2124872671520431656}
   - component: {fileID: 572665262111759617}
-  - component: {fileID: 7416049156138025921}
   - component: {fileID: 3334626515285315392}
   m_Layer: 0
   m_Name: Compass
@@ -118,27 +117,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7416049156138025921
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899771305458822710}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3334626515285315392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +183,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 26204cea6ffe8e04fa5f932d7ee2db29, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d648fa4e573a33e4b9792ff6ab3bd647, type: 2}
+      objectReference: {fileID: 2100000, guid: ba16eeebc36006449a2b00760deecc25, type: 2}
     - target: {fileID: 919132149155446097, guid: 26204cea6ffe8e04fa5f932d7ee2db29, type: 3}
       propertyPath: m_Name
       value: Gravity Pointer

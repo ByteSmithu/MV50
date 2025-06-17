@@ -23,6 +23,9 @@ namespace Prefabs.DistanceGrab
         public Transform controllerTransform;
 
         public AudioSource sound;
+        public GravityHaptics gravityHaptics;
+
+        public bool isLeftHand;
 
 
         private void Start()
@@ -50,12 +53,14 @@ namespace Prefabs.DistanceGrab
                 {
                     GrabOject();
                     sound.Play(0);
+                    gravityHaptics.TriggerHaptics(isLeftHand);
 
                 }
 
                 if (context.canceled)
                 {
                     releaseObject();
+                    gravityHaptics.TriggerHaptics(isLeftHand);
                 }
             }
         }

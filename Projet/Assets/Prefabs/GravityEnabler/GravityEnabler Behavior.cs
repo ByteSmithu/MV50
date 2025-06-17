@@ -14,7 +14,9 @@ namespace Prefabs.GravityEnabler
         public Material canMaterial;
         public Material highlightMaterial;
 
-        private Dictionary<Renderer, Material> modifiedObjects = new();
+        public GravityHaptics gravityHaptics;
+
+        public bool isLeftHand;
 
         public AudioSource sound;
 
@@ -24,7 +26,6 @@ namespace Prefabs.GravityEnabler
 
 
             lineRenderer = GetComponent<LineRenderer>();
-            //ShowPointer();
         }
 
         private void ShowPointer()
@@ -46,22 +47,7 @@ namespace Prefabs.GravityEnabler
                 {
                     rb.useGravity = !rb.useGravity;
                     sound.Play(0);
-                    if (!rb.useGravity)
-                    {
-                        if (!modifiedObjects.ContainsKey(rend))
-                        {
-                            modifiedObjects[rend] = rend.material;
-                            rend.materials = new Material[] { rend.material, highlightMaterial };
-                        }
-                    }
-                    else
-                    {
-                        if (modifiedObjects.ContainsKey(rend))
-                        {
-                            rend.materials = new Material[] { modifiedObjects[rend] };
-                            modifiedObjects.Remove(rend);
-                        }
-                    }
+                    gravityHaptics.TriggerHaptics(isLeftHand);
                 }
             }
         }
