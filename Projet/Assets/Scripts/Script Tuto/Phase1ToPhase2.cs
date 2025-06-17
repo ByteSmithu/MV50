@@ -12,7 +12,6 @@ public class Phase1ToPhase2 : MonoBehaviour
     private Transform oldTran;
     private Transform newTran;
 
-    private Vector3 temp; 
 
     public Material bleu;
     public Material rouge;
@@ -32,16 +31,14 @@ public class Phase1ToPhase2 : MonoBehaviour
         oldTran = oldPhaseObject.GetComponent<Transform> ();
         newTran = newPhaseObject.GetComponent<Transform> ();
 
-        temp = oldTran.position;
-
     }
 
 
 
     private IEnumerator bringPhase2()
     {
-        yield return new WaitForSeconds(sound.clip.length + 2);
-        newTran.position = temp;
+        yield return new WaitForSeconds(sound.clip.length + 1);
+        newTran.position = new Vector3(0,0,0);
         print("here");
         planBleu.GetComponent<MeshRenderer>().material = bleu;
         planRouge.GetComponent<MeshRenderer>().material = rouge;
