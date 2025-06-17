@@ -47,7 +47,7 @@ Material:
     - _Cull: 2
     - _DstBlend: 10
     - _FresnelPower: 0.7
-    - _GravityPower: 0.021000002
+    - _GravityPower: 0.11399996
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5

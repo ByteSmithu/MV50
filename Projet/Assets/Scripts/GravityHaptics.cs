@@ -8,9 +8,9 @@ public class GravityHaptics : MonoBehaviour
     public float duration = 0.3f;  // Durée en secondes
 
     private List<InputDevice> devices = new List<InputDevice>();
-    
-    private InputDevice leftHand;
-    private InputDevice rightHand;
+
+    public InputDevice leftHand;
+    public InputDevice rightHand;
 
 
     void Update()
@@ -29,7 +29,7 @@ public class GravityHaptics : MonoBehaviour
             {
                 rightHand = device;
             }
-    }
+        }
 
 
     }
@@ -39,15 +39,13 @@ public class GravityHaptics : MonoBehaviour
 
         float leftIntensity = Mathf.Clamp01(-gravityDir.x);  // vers la gauche
         float rightIntensity = Mathf.Clamp01(gravityDir.x);  // vers la droite
-        Debug.Log(leftIntensity);
-        Debug.Log(rightIntensity);
         if (leftIntensity < 0.1f && rightIntensity < 0.1f)
         {
             leftIntensity += 0.1f;
             rightIntensity += 0.1f;
             if (leftHand.isValid && leftHand.TryGetHapticCapabilities(out var leftCap) && leftCap.supportsImpulse)
             {
-                leftHand.SendHapticImpulse(0,leftIntensity * amplitude, duration);
+                leftHand.SendHapticImpulse(0, leftIntensity * amplitude, duration);
             }
 
             if (rightHand.isValid && rightHand.TryGetHapticCapabilities(out var rightCap) && rightCap.supportsImpulse)
@@ -67,7 +65,27 @@ public class GravityHaptics : MonoBehaviour
                 rightHand.SendHapticImpulse(0, rightIntensity * amplitude, duration);
             }
         }
-        
+
     }
+    
+    
+    public void TriggerHaptics(bool isLeftHand)
+    {
+        if (isLeftHand)
+        {
+            if (leftHand.isValid && leftHand.TryGetHapticCapabilities(out var leftCap) && leftCap.supportsImpulse)
+            {
+                leftHand.SendHapticImpulse(0, amplitude, duration);
+            }
+        }
+        else
+        {
+            if (rightHand.isValid && rightHand.TryGetHapticCapabilities(out var rightCap) && rightCap.supportsImpulse)
+            {
+                rightHand.SendHapticImpulse(0, amplitude, duration);
+            }   
+        }
+    }
+
 
 }
