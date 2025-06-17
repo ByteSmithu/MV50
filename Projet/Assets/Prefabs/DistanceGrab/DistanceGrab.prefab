@@ -78,7 +78,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 2}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.02
@@ -151,11 +151,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 10
-  cannotMaterial: {fileID: 2100000, guid: ce4d04bf9a64f1b4e92c2ff0d20f5779, type: 2}
+  cannotMaterial: {fileID: 2100000, guid: 872066d59898bed478895454b8646ee6, type: 2}
   canMaterial: {fileID: 2100000, guid: c918981d12a48ae4f9823752982a898c, type: 2}
   rotationSensitivity: 1
   controllerTransform: {fileID: 0}
   sound: {fileID: 3490915686906549573}
+  gravityHaptics: {fileID: 0}
+  isLeftHand: 0
 --- !u!82 &3490915686906549573
 AudioSource:
   m_ObjectHideFlags: 0

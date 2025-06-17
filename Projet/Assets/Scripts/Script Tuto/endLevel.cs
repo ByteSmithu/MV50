@@ -16,13 +16,14 @@ public class endLevel : MonoBehaviour
     //On instancie AudioSource pour pouvoir jouer un son à la réussite de l'énigme
     private AudioSource sound;
 
+    public ChangeSceneOnWin changeScene; 
+
     void Start()
     {
         //On donne comme valeur à forEnd le nombre de cube dans l'énigme
 
         sound = gameObject.GetComponent<AudioSource>();
         forEnd += 1;
-        print(forEnd);
     }
 
 
@@ -30,14 +31,12 @@ public class endLevel : MonoBehaviour
     public void Increase()
     {
         forEnd = forEnd + 1;
-        print(forEnd);
     }
 
     //La fonction Decrease diminue de 1 la valeur de forEnd si un cube entre dans sa zone dédier 
     public void Decrease()
     {
         forEnd = forEnd - 1;
-        print(forEnd);
     }
 
     //A chaque fois qu'un cube entre dans la bonne zonne, on vérifie la valeur de forEnd, si il est nul cela veut dire que l'énigme est réussie 
@@ -46,8 +45,6 @@ public class endLevel : MonoBehaviour
         if (forEnd == 0)
         {
             sound.Play(0);
-            print(forEnd);
-            print("win");
             StartCoroutine(endingLevel());
         }
     }
@@ -56,6 +53,7 @@ public class endLevel : MonoBehaviour
     {
         if (other.gameObject.name == correctTrigger.name)
         {
+            Debug.Log(other.gameObject.name);
             Decrease();
             checkWin();
         }
@@ -72,8 +70,7 @@ public class endLevel : MonoBehaviour
         private IEnumerator endingLevel()
     {
         yield return new WaitForSeconds(sound.clip.length + 2);
-        SceneManager.LoadScene(1);
-
+        changeScene.Won();
     }
 
 }

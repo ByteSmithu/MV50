@@ -14,7 +14,7 @@ namespace Prefabs.DistanceGrab
         private float hitDistance;
         private float transformDistance;
 
-        public float maxDistance = 5f;
+        public float maxDistance = 10f;
         public Material cannotMaterial;
         public Material canMaterial;
 
@@ -52,15 +52,11 @@ namespace Prefabs.DistanceGrab
                 if (context.started)
                 {
                     GrabOject();
-                    sound.Play(0);
-                    gravityHaptics.TriggerHaptics(isLeftHand);
-
                 }
 
                 if (context.canceled)
                 {
                     releaseObject();
-                    gravityHaptics.TriggerHaptics(isLeftHand);
                 }
             }
         }
@@ -84,6 +80,8 @@ namespace Prefabs.DistanceGrab
 
             if (tempGrabbedGameObject != null)
             {
+                sound.Play(0);
+                gravityHaptics.TriggerHaptics(isLeftHand);
                 if (isBox)
                 {
                     isRotating = true;
@@ -102,7 +100,7 @@ namespace Prefabs.DistanceGrab
                         grabbing = true;
                         tempGrabbedGameObject = null;
                         dgb.Grab();
-                    }   
+                    }
                 }
 
             }
@@ -111,12 +109,14 @@ namespace Prefabs.DistanceGrab
         {
             if (grabbing)
             {
+                gravityHaptics.TriggerHaptics(isLeftHand);
                 grabbedGameObject.GetComponent<DistanceGrabbedBehavior>().Release();
                 grabbedGameObject = null;
                 grabbing = false;
             }
             if (isRotating)
             {
+                gravityHaptics.TriggerHaptics(isLeftHand);
                 grabbedGameObject.GetComponent<DistanceRotatedBehavior>().Release();
                 grabbedGameObject = null;
                 isRotating = false;
@@ -132,8 +132,9 @@ namespace Prefabs.DistanceGrab
                 if (!grabbing && !isRotating)
                 {
                     RaycastHit hit;
+                    int layerMask = ~LayerMask.GetMask("WallTuto");
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,
-                            maxDistance))
+                            maxDistance, layerMask))
                     {
                         lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);
 
@@ -171,7 +172,7 @@ namespace Prefabs.DistanceGrab
                         {
                             isBox = false;
                         }
-                        
+
                     }
                     else
                     {

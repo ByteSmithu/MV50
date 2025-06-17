@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720791184622964751}
   m_Layer: 0
-  m_Name: Console panel
+  m_Name: Icon panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

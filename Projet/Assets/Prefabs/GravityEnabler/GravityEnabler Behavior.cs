@@ -9,7 +9,7 @@ namespace Prefabs.GravityEnabler
         private LineRenderer lineRenderer;
         private GameObject remoteRigidBody;
 
-        public float maxDistance = 5f;
+        public float maxDistance = 10f;
         public Material cannotMaterial;
         public Material canMaterial;
         public Material highlightMaterial;
@@ -65,7 +65,7 @@ namespace Prefabs.GravityEnabler
                 lineRenderer.SetPosition(0, transform.position);
 
                 RaycastHit hit;
-                int layerMask = ~LayerMask.GetMask("Wall");
+                int layerMask = ~LayerMask.GetMask("Wall", "WallTuto");
                 if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
                 {
                     lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);

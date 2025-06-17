@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a312191033947b408ff7c88fb1340f5, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -262,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f44f05f0a99b7c143bc879e6042bf431, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -357,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cc09a479e0e76ef41815b9cc02b17a21, type: 3}
       propertyPath: m_Name
       value: WallBehind
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc09a479e0e76ef41815b9cc02b17a21, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -622,6 +634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8850d3c1687b98488ba9c6124cec465, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1282845467967759092, guid: e8850d3c1687b98488ba9c6124cec465, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -693,6 +709,10 @@ PrefabInstance:
     - target: {fileID: 3887339507371168817, guid: ef82731e4b262ba4bb2cfab50a5a9974, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887339507371168817, guid: ef82731e4b262ba4bb2cfab50a5a9974, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4519725077796949643, guid: ef82731e4b262ba4bb2cfab50a5a9974, type: 3}
       propertyPath: m_LocalPosition.x
@@ -858,6 +878,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2261e05ce5dec2147844b36174b7ac94, type: 3}
       propertyPath: m_Name
       value: WallForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2261e05ce5dec2147844b36174b7ac94, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3316017015347892209, guid: 2261e05ce5dec2147844b36174b7ac94, type: 3}
       propertyPath: m_Materials.Array.data[1]

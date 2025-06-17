@@ -18,7 +18,6 @@ public class CollisionGameLogic : GameLogic
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject == gameObjectToCollideWith)
         {
             conditionDone = true;

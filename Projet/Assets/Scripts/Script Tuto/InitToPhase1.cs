@@ -26,7 +26,7 @@ public class InitToPhase1 : MonoBehaviour
     {
         yield return new WaitForSeconds(sound.clip.length);
         Tran.position = new Vector3(0,0,0);;
-        print("here");
+
 
     }
 }

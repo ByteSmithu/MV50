@@ -11,7 +11,7 @@ public class Phase1ToPhase2 : MonoBehaviour
 
     private Transform oldTran;
     private Transform newTran;
-
+    private Transform cubeTran;
 
     public Material bleu;
     public Material rouge;
@@ -22,14 +22,16 @@ public class Phase1ToPhase2 : MonoBehaviour
     public GameObject planRouge;
     public GameObject planVert;
     public GameObject planJaune;
+    public GameObject cube;
 
 
     void Start()
     {
         sound = gameObject.GetComponent<AudioSource>();
 
-        oldTran = oldPhaseObject.GetComponent<Transform> ();
-        newTran = newPhaseObject.GetComponent<Transform> ();
+        oldTran = oldPhaseObject.GetComponent<Transform>();
+        newTran = newPhaseObject.GetComponent<Transform>();
+        cubeTran = cube.GetComponent<Transform>();
 
     }
 
@@ -37,9 +39,11 @@ public class Phase1ToPhase2 : MonoBehaviour
 
     private IEnumerator bringPhase2()
     {
+        oldTran.position = new Vector3(100,0,100);
         yield return new WaitForSeconds(sound.clip.length + 1);
+        cubeTran.position = new Vector3(100,0,100);
+
         newTran.position = new Vector3(0,0,0);
-        print("here");
         planBleu.GetComponent<MeshRenderer>().material = bleu;
         planRouge.GetComponent<MeshRenderer>().material = rouge;
         planJaune.GetComponent<MeshRenderer>().material = jaune;
@@ -51,8 +55,6 @@ public class Phase1ToPhase2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
-        oldTran.position = new Vector3(100,0,100);
         sound.Play(0);
         StartCoroutine(bringPhase2());
 
